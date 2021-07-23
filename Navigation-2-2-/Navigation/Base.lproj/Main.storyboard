@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXG-1A-EnK" customClass="ProfileHeaderView" customModule="Navigation" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="428" height="220"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="header" translatesAutoresizingMaskIntoConstraints="NO" id="jXG-1A-EnK" customClass="ProfileHeaderView" customModule="Navigation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="428" height="224"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Yoda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-z2-gaX">
-                                        <rect key="frame" x="169" y="27" width="90.333333333333314" height="22"/>
+                                        <rect key="frame" x="168.66666666666666" y="27" width="90.999999999999972" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="O2A-jx-hlo"/>
                                         </constraints>
@@ -43,13 +43,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for something..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naK-7k-ywa">
-                                        <rect key="frame" x="169" y="84" width="239" height="17"/>
+                                        <rect key="frame" x="168.66666666666663" y="84" width="243.33333333333337" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzW-7r-h3O">
-                                        <rect key="frame" x="169" y="112" width="243" height="40"/>
+                                        <rect key="frame" x="168.66666666666663" y="112" width="243.33333333333337" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4zw-hR-Xzv"/>
                                         </constraints>
@@ -88,22 +88,18 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Wtp-NF-gR1" secondAttribute="trailing" constant="16" id="1Se-vn-vcz"/>
                                     <constraint firstItem="OzW-7r-h3O" firstAttribute="top" secondItem="naK-7k-ywa" secondAttribute="bottom" constant="11" id="1VT-LN-aoD"/>
                                     <constraint firstItem="Wtp-NF-gR1" firstAttribute="top" secondItem="OzW-7r-h3O" secondAttribute="bottom" constant="16" id="5hc-Vx-e29"/>
-                                    <constraint firstAttribute="trailing" secondItem="OzW-7r-h3O" secondAttribute="trailing" constant="16" id="AKV-xx-McR"/>
-                                    <constraint firstAttribute="trailing" secondItem="naK-7k-ywa" secondAttribute="trailing" constant="20" symbolic="YES" id="IZ4-97-nTB"/>
                                     <constraint firstItem="fa1-z2-gaX" firstAttribute="centerX" secondItem="jXG-1A-EnK" secondAttribute="centerX" id="JyI-pg-qeJ"/>
-                                    <constraint firstItem="Wtp-NF-gR1" firstAttribute="leading" secondItem="jXG-1A-EnK" secondAttribute="leading" constant="16" id="LsW-we-Dup"/>
                                     <constraint firstItem="naK-7k-ywa" firstAttribute="leading" secondItem="fa1-z2-gaX" secondAttribute="leading" id="U9k-6S-f2W"/>
                                     <constraint firstItem="OzW-7r-h3O" firstAttribute="leading" secondItem="naK-7k-ywa" secondAttribute="leading" id="ZUS-4z-BJu"/>
                                     <constraint firstItem="1yN-dQ-pX2" firstAttribute="width" secondItem="jXG-1A-EnK" secondAttribute="width" multiplier="0.25" constant="-4" id="aJD-8C-UQ5" userLabel="Avatar Image View.width = 4 × width - 16"/>
-                                    <constraint firstItem="1yN-dQ-pX2" firstAttribute="leading" secondItem="jXG-1A-EnK" secondAttribute="leading" constant="16" id="aa6-MI-mFa"/>
-                                    <constraint firstAttribute="height" constant="220" id="c6E-JD-k5F"/>
                                     <constraint firstItem="naK-7k-ywa" firstAttribute="top" secondItem="1yN-dQ-pX2" secondAttribute="bottom" constant="-35" id="jYo-SZ-pd0"/>
                                     <constraint firstItem="fa1-z2-gaX" firstAttribute="top" secondItem="jXG-1A-EnK" secondAttribute="top" constant="27" id="v2O-qj-Shk"/>
                                     <constraint firstItem="1yN-dQ-pX2" firstAttribute="top" secondItem="jXG-1A-EnK" secondAttribute="top" constant="16" id="xwP-oF-L9T"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wtp-NF-gR1" secondAttribute="bottom" constant="16" id="zHK-43-N2r"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="avatarImageView" destination="1yN-dQ-pX2" id="Tai-ow-NH8"/>
@@ -117,10 +113,13 @@
                         <viewLayoutGuide key="safeArea" id="FCL-IZ-fe8"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="jXG-1A-EnK" firstAttribute="top" secondItem="FCL-IZ-fe8" secondAttribute="top" id="0Xq-V6-Z5t"/>
-                            <constraint firstItem="jXG-1A-EnK" firstAttribute="top" secondItem="FCL-IZ-fe8" secondAttribute="top" id="Cv3-HT-OYb"/>
+                            <constraint firstItem="FCL-IZ-fe8" firstAttribute="trailing" secondItem="Wtp-NF-gR1" secondAttribute="trailing" constant="16" id="BnY-fV-NUQ"/>
                             <constraint firstAttribute="trailing" secondItem="jXG-1A-EnK" secondAttribute="trailing" id="DSV-vF-BCC"/>
+                            <constraint firstItem="1yN-dQ-pX2" firstAttribute="leading" secondItem="FCL-IZ-fe8" secondAttribute="leading" constant="16" id="Yon-uT-CNd"/>
+                            <constraint firstItem="FCL-IZ-fe8" firstAttribute="trailing" secondItem="naK-7k-ywa" secondAttribute="trailing" constant="16" id="iGN-fQ-M0k"/>
+                            <constraint firstItem="Wtp-NF-gR1" firstAttribute="leading" secondItem="FCL-IZ-fe8" secondAttribute="leading" constant="16" id="iQp-g6-Wdf"/>
                             <constraint firstItem="jXG-1A-EnK" firstAttribute="leading" secondItem="z6I-Co-0n3" secondAttribute="leading" id="oS1-P5-UHM"/>
+                            <constraint firstItem="FCL-IZ-fe8" firstAttribute="trailing" secondItem="OzW-7r-h3O" secondAttribute="trailing" constant="16" id="yYS-gV-c4I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="TPi-FS-zh0">
@@ -129,7 +128,7 @@
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
-                        <outlet property="HeaderView" destination="jXG-1A-EnK" id="LAV-vA-271"/>
+                        <outlet property="headerView" destination="jXG-1A-EnK" id="l5a-EW-dQT"/>
                         <outlet property="navigationBar" destination="TPi-FS-zh0" id="urj-EG-CaW"/>
                     </connections>
                 </viewController>
@@ -298,6 +297,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

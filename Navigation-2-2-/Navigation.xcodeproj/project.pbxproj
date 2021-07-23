@@ -18,6 +18,7 @@
 		060782CA250CEE7200A87020 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
 		E32C7E9D2663DEDA00C3014E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */; };
 		E32C7E9F2663DEF200C3014E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C7E9E2663DEF200C3014E /* ProfileViewController.swift */; };
+		E38FDB4426A5F3C100F274C6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38FDB4326A5F3C000F274C6 /* PostTableViewCell.swift */; };
 		E3BC1FB92695E73A0075EB4B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		060782C9250CEE7200A87020 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E32C7E9E2663DEF200C3014E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E38FDB4326A5F3C000F274C6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				E32C7E9C2663DEDA00C3014E /* ProfileHeaderView.swift */,
 				E32C7E9E2663DEF200C3014E /* ProfileViewController.swift */,
 				E3BC1FB82695E73A0075EB4B /* LogInViewController.swift */,
+				E38FDB4326A5F3C000F274C6 /* PostTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				E32C7E9D2663DEDA00C3014E /* ProfileHeaderView.swift in Sources */,
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
 				E32C7E9F2663DEF200C3014E /* ProfileViewController.swift in Sources */,
+				E38FDB4426A5F3C100F274C6 /* PostTableViewCell.swift in Sources */,
 				E3BC1FB92695E73A0075EB4B /* LogInViewController.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 			);

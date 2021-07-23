@@ -9,12 +9,31 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    private let vkLogo: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "logo"))
+        
+        image.translatesAutoresizingMaskIntoConstraints = false
+
+        return image
+    }()
     
-    let vkLogo = UIImageView(image: UIImage(named: "logo"))
-    let scrollView = UIScrollView()
-    let containerView = UIStackView()
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
     
-    let usersEmailOrPhone: UITextField = {
+    private let containerView: UIStackView = {
+        let view = UIStackView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+    
+    private let usersEmailOrPhone: UITextField = {
        let emailOrPhone = UITextField()
         
         emailOrPhone.tintColor = #colorLiteral(red: 0.3675304651, green: 0.5806378722, blue: 0.7843242884, alpha: 1)
@@ -36,7 +55,7 @@ class LogInViewController: UIViewController {
         return emailOrPhone
     }()
     
-    let usersPassword: UITextField = {
+    private let usersPassword: UITextField = {
        let password = UITextField()
         
         password.tintColor = #colorLiteral(red: 0.3675304651, green: 0.5806378722, blue: 0.7843242884, alpha: 1)
@@ -60,8 +79,8 @@ class LogInViewController: UIViewController {
         return password
     }()
     
-    let logInButton: UIButton = {
-        var button = UIButton()
+    private let logInButton: UIButton = {
+        let button = UIButton()
         
         button.setTitle("Log In", for: .normal)
         button.tintColor = .white
@@ -81,6 +100,24 @@ class LogInViewController: UIViewController {
         
         view.backgroundColor = .white
                 
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboadWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setupViews() {
         view.addSubview(scrollView)
         view.addSubview(vkLogo)
         view.addSubview(usersEmailOrPhone)
@@ -88,12 +125,6 @@ class LogInViewController: UIViewController {
         view.addSubview(logInButton)
         
         scrollView.addSubview(containerView)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        vkLogo.translatesAutoresizingMaskIntoConstraints = false
         
         let constraints = [
             scrollView.topAnchor.constraint(equalTo:
@@ -157,27 +188,18 @@ class LogInViewController: UIViewController {
                                                 containerView.bottomAnchor,
                                                 constant: -100)]
         
-        NSLayoutConstraint.activate(constraints)
-        }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboadWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+            NSLayoutConstraint.activate(constraints)
     }
     
     @objc fileprivate func keyboadWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize =
+            (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+                NSValue)?.cgRectValue {
             scrollView.contentInset.bottom = keyboardSize.height
-            scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0,
+                                                    left: 0,
+                                                    bottom: keyboardSize.height,
+                                                    right: 0)
         }
     }
     
@@ -186,7 +208,7 @@ class LogInViewController: UIViewController {
         scrollView.verticalScrollIndicatorInsets = .zero
     }
     
-    @objc func buttonPressed(_: UIButton) {
+    @objc fileprivate func buttonPressed(_: UIButton) {
         navigationController?.popViewController(animated: true)
     }
 }
